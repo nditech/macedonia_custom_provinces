@@ -10,7 +10,7 @@
  *   - list of states/provinces with abbreviation,
  *   - list of states/provinces to rename,
  */
-function moroccoprovinces_stateConfig() {
+function macedoniaprovinces_stateConfig() {
   $config = array(
     // CAUTION: only use `overwrite` on fresh databases.
     'overwrite' => FALSE,
@@ -113,8 +113,8 @@ function moroccoprovinces_stateConfig() {
  * @return bool
  *   Success true/false.
  */
-function moroccoprovinces_loadProvinces() {
-  $stateConfig = moroccoprovinces_stateConfig();
+function macedoniaprovinces_loadProvinces() {
+  $stateConfig = macedoniaprovinces_stateConfig();
 
   if (empty($stateConfig['states']) || empty($stateConfig['countryIso'])) {
     return FALSE;
@@ -136,7 +136,7 @@ function moroccoprovinces_loadProvinces() {
   catch (CiviCRM_API3_Exception $e) {
     $error = $e->getMessage();
     CRM_Core_Error::debug_log_message(ts('API Error: %1', array(
-      'domain' => 'com.aghstrategies.moroccoprovinces',
+      'domain' => 'org.ndi.macedoniaprovinces',
       1 => $error,
     )));
     return FALSE;
@@ -241,8 +241,8 @@ function moroccoprovinces_loadProvinces() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_install
  */
-function moroccoprovinces_civicrm_install() {
-  moroccoprovinces_loadProvinces();
+function macedoniaprovinces_civicrm_install() {
+  macedoniaprovinces_loadProvinces();
 }
 
 /**
@@ -250,8 +250,8 @@ function moroccoprovinces_civicrm_install() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
-function moroccoprovinces_civicrm_enable() {
-  moroccoprovinces_loadProvinces();
+function macedoniaprovinces_civicrm_enable() {
+  macedoniaprovinces_loadProvinces();
 }
 
 /**
@@ -259,6 +259,6 @@ function moroccoprovinces_civicrm_enable() {
  *
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_upgrade
  */
-function moroccoprovinces_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
-  moroccoprovinces_loadProvinces();
+function macedoniaprovinces_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  macedoniaprovinces_loadProvinces();
 }
