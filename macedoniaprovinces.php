@@ -17,7 +17,6 @@ function macedoniaprovinces_stateConfig() {
     'countryIso' => 'MK',
     'states' => array(
       // 'state name' => 'abbreviation',
-      'AGADIR IDA OU TANAN' => '1',
       'Aerodrom' => 'AD',
       'Arachinovo' => 'AR',
       'Berovo' => 'BE',
