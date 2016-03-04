@@ -13,7 +13,7 @@
 function macedoniaprovinces_stateConfig() {
   $config = array(
     // CAUTION: only use `overwrite` on fresh databases.
-    'overwrite' => FALSE,
+    'overwrite' => TRUE,
     'countryIso' => 'MK',
     'states' => array(
       // 'state name' => 'abbreviation',
